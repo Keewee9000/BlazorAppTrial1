@@ -1,0 +1,42 @@
+﻿@page "/"
+
+@using BlazorAppTrial1.Components.Pages
+
+<PageTitle>Inventory</PageTitle>
+
+<h1>Simple Inventory App</h1>
+
+<div class="mb-3">
+    <input class="form-control mb-2" placeholder="Item name" @bind="newItem.Name" />
+    <input class="form-control mb-2" type="number" placeholder="Quantity" @bind="newItem.Quantity" />
+    <button class="btn btn-primary" @onclick="AddItem">Add Item</button>
+</div>
+
+@if (items.Count == 0)
+{
+    <p>No items in inventory.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @onclick="() => RemoveItem(item.Id)">Remove</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
