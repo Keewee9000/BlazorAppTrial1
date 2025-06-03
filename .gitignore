@@ -1,0 +1,34 @@
+# Build and publish outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.vspscc
+*.vssscc
+
+# Visual Studio specific files
+.vscode/
+.vs/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# Configuration files
+appsettings.*.json
+
+# Dependency directories
+node_modules/
+wwwroot/lib/
+
+# Generated files
+*.g.*
+*.g.cs
+
+# IDE-specific settings
+.idea/
